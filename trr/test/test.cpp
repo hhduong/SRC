@@ -26,9 +26,9 @@ int main()
 	
 	/*List<int> k = d.KeVoi(2);
 	cout<<k;*/
-	//cout<<d.LaLienThong()<<endl;
+	cout<<d.LaLienThong()<<endl;
 	//cout<<d.DuongDi(3, 5);
-	cout<<d.DFS(1);
+	//cout<<d.DFS(1);
 	//cout<<d.BFS(2);*/
 	return 0;
 }

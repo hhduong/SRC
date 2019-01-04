@@ -60,14 +60,14 @@ public:
 		}
 		return kq;
 	}
-	void DFS(int i)
+	/*void DFS(int i)
 	{
 		int visit[N];
 		//da dau dinh da duyet
 		visit[i] = 1;
 		// luu dinh i la dinh da duyet qua
-		//List<int> listVisit;
-		//listVisit.Add(i);
+		List<int> listVisit;
+		listVisit.Add(i);
 		for(int j=0;j<N;j++)
 		{
 			if((a[i][j]>0) && (visit[i]!=1))
@@ -76,6 +76,34 @@ public:
 				DFS(j);
 			}
 		}
-	}
+	}*/
+	bool LaLienThong()
+	{
+		int *Visit = new int[N];
+		//mang chua cac dinh da danh dau
+		for(int i=0;i<N;i++)
+			Visit[i]=0;
+		Visit[0] = 1; // xuat phat tu dinh 1
+		int dem = 1;
+		for(int i=1;i<=N;i++)
+		{
+			if(Visit[i-1]==1)
+			{
+				for(int j=1;j<=N;j++)
+				{
+					if(Visit[j-1]==0 && a[i-1][j-1]==1)
+					{
+						Visit[j-1] = 1;
+						dem++;
+					}
+				}
+			}
+		}
+		if(dem == N)
+			return true;	
+		else
+			return false;
+			
+	};
 }; 
 #endif
